@@ -18,7 +18,7 @@ def main(query_statement):
 
     execute_query(spark, query_statement)
 
-    # csv_result = determine_activity(csv_result)
+    csv_result = determine_activity(csv_result)
 
     # execute_query(spark, query_statement)
 
