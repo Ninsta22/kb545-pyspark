@@ -20,5 +20,5 @@ class TestMyLib(unittest.TestCase):
         try:
             execute_query(self.spark, "SELECT * FROM nba_data WHERE Tm LIKE 'MIA'")
             assert True
-        except:
-            assert False
+        except Exception as e:
+            assert False, f"An error occured: {e}"
