@@ -5,5 +5,8 @@ pytest==7.1.3
 pytest-cov==4.0.0
 requests==2.26.0
 fire==0.5.0
+pylint==2.15.3
 #rust based linter
 ruff==0.0.284
+
+pyspark==3.5.0

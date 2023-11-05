@@ -2,24 +2,28 @@
 ETL-Query script
 """
 
-from mylib.extract import extract
-from mylib.transform_load import load
-from mylib.query import query
+from mylib.spark_db import (
+    create_session,
+    csv_to_spark,
+    execute_query,
+    determine_activity,
+)
 import fire
 
 
 def main(query_statement):
-    # Extract
-    print("Extracting data...")
-    extract()
+    spark = create_session()
 
-    # Transform and load
-    print("Transforming data...")
-    load()
+    csv_result = csv_to_spark(spark, "2021-2022 NBA Player Stats - Regular.csv")
 
-    print("Querying data...")
-    query(query_statement)
+    execute_query(spark, query_statement)
 
+    # csv_result = determine_activity(csv_result)
+
+    # execute_query(spark, query_statement)
+
+
+main("SELECT * FROM nba_data WHERE Tm LIKE 'MIA'")
 
 # Following below are sample CRUD Operations
 # """SELECT general_name FROM GroceryDB WHERE count_products > 10"""
