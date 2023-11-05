@@ -1,4 +1,3 @@
-import sqlite3
 from mylib.spark_db import create_session, csv_to_spark, execute_query
 import unittest
 
