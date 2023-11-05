@@ -14,7 +14,7 @@ class TestMyLib(unittest.TestCase):
 
     # Tests that the CSV File was Read Properly
     def test_read_csv(self):
-        assert len(self.df.colums) == 30
+        assert len(self.df.columns) == 30
 
     def test_sql_query(self):
         try:
@@ -22,3 +22,7 @@ class TestMyLib(unittest.TestCase):
             assert True
         except Exception as e:
             assert False, f"An error occured: {e}"
+
+
+if __name__ == "__main__":
+    unittest.main()
