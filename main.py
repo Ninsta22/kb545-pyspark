@@ -6,7 +6,7 @@ from mylib.spark_db import (
     create_session,
     csv_to_spark,
     execute_query,
-    determine_activity,
+    # determine_activity,
 )
 import fire
 
@@ -18,7 +18,7 @@ def main(query_statement):
 
     execute_query(spark, query_statement)
 
-    csv_result = determine_activity(csv_result)
+    # csv_result = determine_activity(csv_result)
 
     # execute_query(spark, query_statement)
 
